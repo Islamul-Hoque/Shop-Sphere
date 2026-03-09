@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ShopSphere",
-  description: "ShopSphere is a Full-Stack E-commerce Website",
-};
+  title: "ShopSphere - Multipurpose eCommerce website",
+  description: "Test application for education purpose",
+}
 
 export default function RootLayout({
   children,
