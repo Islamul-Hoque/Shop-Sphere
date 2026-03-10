@@ -9,6 +9,13 @@ export const navigation = [
     { title: "Contact", href: "/contact" },
 ];
 
+export const information = [
+    { title: "About", href: "/about" },
+    { title: "Contact", href: "/contact" },
+    { title: "Inquiry", href: "/inquiry" },
+    { title: "FAQs", href: "/faqs" },
+];
+
 export const banner = {
     priceText: "Starting at $999.90",
     title: "The best tablet Collection 2024",
