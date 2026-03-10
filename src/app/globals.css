@@ -9,8 +9,10 @@
   default: true;
   --color-primary: #0c55aa;
   --color-secondary: #0989ff;
+
+  --color-base-200: #ffffff;
   --color-lightBg: #f4f7f9;
-  --themeWhite: #ffffff;
+
   --lightYellow: #ffd43a;
   --borderColor: #eaebed;
   --lightText: #55585b;
@@ -28,7 +30,6 @@
   --color-accent: oklch(72% 0.20 55);
 
 
-  --color-base-100: oklch(100% 0 0);
   --color-base-200: oklch(97% 0.01 95);
   --color-base-300: oklch(92% 0.015 95);
 

@@ -29,7 +29,7 @@ const SocialLinks = () => {
     return (
         <div className="text-xl py-2 text-white/50 flex items-center gap-x-2">
             {linksData?.map((item, index) => (
-                <Link key={index} href={item?.href} target="_blank" className="hover:text-white duration-300" >
+                <Link key={index} href={item?.href} target="_blank" className="border border-white/20 inline-flex p-2 rounded-full hover:text-primary hover:border-primary duration-300 cursor-pointer" >
                     {item?.icon}
                 </Link>
             ))}

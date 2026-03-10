@@ -1,0 +1,30 @@
+import React from 'react';
+import Container from './Container';
+import { banner } from '@/constants';
+import Image from 'next/image';
+import { GoArrowRight } from 'react-icons/go';
+import Button from './Button';
+
+const Banner = () => {
+    return (
+        <div className="bg-[#115061] py-20 text-base-100">
+            <Container className='flex flex-col md:flex-row gap-5 justify-between md:items-center'>
+                <div className='flex flex-col gap-5'>
+                    <p className="text-base font-semibold">{banner?.priceText}</p>
+                    <h2 className="text-5xl font-bold max-w-[500px]">{banner?.title}</h2>
+                    <p className="text-lg font-bold">
+                        {banner?.textOne}{" "}
+                        <span className="text-lightYellow mx-1">{banner?.offerPrice}</span>
+                        {banner?.textTwo}
+                    </p>
+                    <Button href={banner?.buttonLink} >
+                        Shop Now <GoArrowRight className="text-lg" />
+                    </Button>
+                </div>
+                <Image src={banner?.image} alt='banner image' priority />
+            </Container>
+        </div>
+    );
+};
+
+export default Banner;
