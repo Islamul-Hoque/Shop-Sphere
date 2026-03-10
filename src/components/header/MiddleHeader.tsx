@@ -6,6 +6,7 @@ import SearchInput from "./SearchInput";
 import HeaderIcons from "./HeaderIcons";
 import Link from "next/link";
 import { LiaUser } from "react-icons/lia";
+import MobileNavigation from "./MobileNavigation";
 
 const MiddleHeader = () => {
     return (
@@ -24,7 +25,7 @@ const MiddleHeader = () => {
 
                     <HeaderIcons />
                 </div>
-
+                <MobileNavigation />
             </Container>
         </div>
     );
