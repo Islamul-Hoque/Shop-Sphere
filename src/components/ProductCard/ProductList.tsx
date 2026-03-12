@@ -1,7 +1,6 @@
-import Container from "./Container";
-import Image from "next/image";
+import Container from "../Container";
 import ProductCard from "./ProductCard";
-import { ProductType } from "../../type";
+import { ProductType } from "../../../type";
 
 interface Props {
     products: ProductType[];

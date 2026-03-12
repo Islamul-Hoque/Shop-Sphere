@@ -15,7 +15,7 @@
   --color-base-300: #eaebed;
 
   --lightYellow: #ffd43a;
-  --lightText: #55585b;
+  --color-neutral: #55585b;
 }
 
 @custom-variant dark (&:where([data-theme=night], [data-theme=night] *));
