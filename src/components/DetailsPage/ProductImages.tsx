@@ -27,4 +27,3 @@ const ProductImages = ({ images }: Props) => {
 };
 
 export default ProductImages;
-
