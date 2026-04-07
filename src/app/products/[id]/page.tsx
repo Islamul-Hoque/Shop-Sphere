@@ -71,7 +71,26 @@ const SingleProductPage = async ({ params }: Props) => {
             </div>
 
             {/* Product Reviews */}
-            
+            <div className="p-10 bg-[#f7f7f7] md:col-span-2 flex items-center gap-10">
+                {product?.reviews?.map((item) => (
+                    <div key={item?.reviewerName}
+                        className="bg-white/80 p-5 border-[1px] border-orange-100/50 rounded-md hover:border-orange-100 hover:bg-white duration-200 flex flex-col gap-1" >
+                        <p>{item?.comment}</p>
+                        <div className="text-xs">
+                            <p className="font-semibold">{item?.reviewerName}</p>
+                            <p className="">{item?.reviewerEmail}</p>
+                        </div>
+
+                        <div className="flex items-center">
+                            <div className="flex items-center">
+                                {Array?.from({ length: 5 })?.map((_, index) => (
+                                    <MdStar key={index} className={`${index < item?.rating  ? "text-yellow-500"  : "text-neutral"  }`}  />
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
         </Container>
     )
 }
