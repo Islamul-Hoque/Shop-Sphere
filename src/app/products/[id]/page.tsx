@@ -4,6 +4,11 @@ import { getData } from "@/helpers";
 import { ProductType } from "../../../../type";
 import ProductPrice from "@/components/ProductCard/ProductPrice";
 import { MdStar } from "react-icons/md";
+import { FaRegEye } from "react-icons/fa";
+import PriceFormat from "@/components/ProductCard/PriceFormat";
+import AddToCartButton from "@/components/ProductCard/AddToCartButton";
+import paymentImage from '../../../assets/payment.png'
+import Image from "next/image";
 
 interface Props {
     params: {
@@ -31,24 +36,43 @@ const SingleProductPage = async ({ params }: Props) => {
                         <div className="text-base text-lightText flex items-center">
                             {Array?.from({ length: 5 })?.map((_, index) => {
                                 const filled = index + 1 <= Math.floor(product?.rating);
-                                const halfFilled = index + 1 > Math.floor(product?.rating) &&  index < Math.ceil(product?.rating);
+                                const halfFilled = index + 1 > Math.floor(product?.rating) && index < Math.ceil(product?.rating);
 
-                                return (  <MdStar key={index} className={`${filled ? "text-[#fa8900]"  : halfFilled ? "text-[#f7ca00]"  : "text-gray-600"  }`} />   )
+                                return (<MdStar key={index} className={`${filled ? "text-[#fa8900]" : halfFilled ? "text-[#f7ca00]" : "text-neutral"}`} />)
                             })}
-
                         </div>
-                        <p className="text-base font-semibold">
-                            {`(${product?.rating?.toFixed(1)} reviews)`}
-                        </p>
-                    </div>
 
+                        <p className="text-base font-semibold">  {`(${product?.rating?.toFixed(1)} reviews)`}     </p>
+                    </div>
+                </div>
+
+                {/* Description */}
+                <p className="flex items-center">  <FaRegEye className="mr-1" /> {" "} <span className="font-semibold mr-1">250+</span> peoples are viewing this right now </p>
+                <p> You are saving{" "} <PriceFormat amount={product?.discountPercentage / 100} className="text-base font-semibold text-green-500" />  upon purchase </p>
+                <div>
+                    <p className="text-sm tracking-wide">{product?.description}</p>
+                    <p className="text-base">{product?.warrantyInformation}</p>
+                </div>
+                <p> Brand: <span className="font-medium">{product?.brand}</span> </p>
+                <p> Category:{" "} <span className="font-medium capitalize">{product?.category}</span> </p>
+                <p> Tags:{" "}
+                    {product?.tags?.map((item, index) => (
+                        <span key={index} className="font-medium capitalize">
+                            {item} {index < product?.tags?.length - 1 && ", "}
+                        </span>
+                    ))}
+                </p>
+
+                <AddToCartButton product={product} className="rounded-md uppercase font-semibold" />
+                <div className=" bg-[#f7f7f7] p-5 rounded-md flex flex-col items-center justify-center gap-2">
+                    <Image src={paymentImage} alt="payment" className="w- auto  object-cover" />
+                    <p className="font-semibold">Guaranteed safe & secure checkout</p>
                 </div>
             </div>
 
             {/* Product Reviews */}
-
+            
         </Container>
-
     )
 }
 
