@@ -41,7 +41,7 @@ export interface ProductType {
 }
 
 export interface StateType {
-    shopy: {
+    shofy: {
         cart: ProductType[];
         favorite: ProductType[];
         userInfo: any;
