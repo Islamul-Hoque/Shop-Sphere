@@ -23,7 +23,7 @@ const ProductCard = ({ product }: { product: ProductType }) => {
                     <h2 className="font-semibold text-base line-clamp-2">   {product?.title}  </h2>
                     <ProductPrice product={product} />
                 </div>
-                <AddToCartButton product={product}/>
+                <AddToCartButton product={product} className=""/>
             </div>
         </div>
     )
