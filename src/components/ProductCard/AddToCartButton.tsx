@@ -11,14 +11,12 @@ const AddToCartButton = ({ product, className }: { product: ProductType, classNa
     const { cart } = useSelector((state: StateType) => state?.shofy);
     const [existingProduct, setExistingProduct] = useState<ProductType | null>(null);
 
-    
     useEffect(() => {
         const availableProduct = cart?.find((item) => item?.id === product?.id);
         if (availableProduct) {
             setExistingProduct(availableProduct);
         }
     }, [cart, product]);
-
 
     const dispatch = useDispatch();
     const handleAddToCart = () => {

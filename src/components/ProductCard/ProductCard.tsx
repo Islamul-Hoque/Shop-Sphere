@@ -16,7 +16,7 @@ const ProductCard = ({ product }: { product: ProductType }) => {
                 <Image src={product?.images[0]} width={500} height={500} priority={true} className="w-full h-64 object-contain hover:scale-110 duration-300" alt="product-image" />
                 <p className="absolute top-2 right-2 bg-orange-500 text-white py-1 px-2 text-xs rounded-lg">  {product?.discountPercentage}% </p>
             </Link>
-            <Sidebar />
+            <Sidebar product={product} />
             <div className="border-t border-t-base-300 py-2 px-4 flex flex-col justify-between h-40">
                 <div>
                     <p className="text-sm font-medium text-neutral capitalize"> {product?.category}</p>

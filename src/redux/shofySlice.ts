@@ -30,7 +30,7 @@ export const shofySlice = createSlice({
 
         // Increase
         increaseQuantity: (state, action) => {
-            const existingProduct = state?.cart?.find(  (item) => item?.id === action.payload  )
+            const existingProduct = state?.cart?.find((item) => item?.id === action.payload)
             if (existingProduct) {
                 existingProduct.quantity! += 1;
             }
@@ -38,13 +38,43 @@ export const shofySlice = createSlice({
 
         // Decrease
         decreaseQuantity: (state, action) => {
-            const existingProduct = state?.cart?.find(  (item) => item?.id === action.payload  )
+            const existingProduct = state?.cart?.find((item) => item?.id === action.payload)
             if (existingProduct) {
                 existingProduct.quantity! -= 1;
             }
         },
+
+        // Remove from card
+        removeFromCart: (state, action) => {
+            state.cart = state.cart.filter((item) => item?.id !== action.payload);
+        },
+
+        // Reset cart
+        resetCart: (state) => {
+            state.cart = [];
+        },
+
+        // Favorite cart
+        addToFavorite: (state, action) => {
+            const existingProduct = state?.favorite?.find(
+                (item) => item?.id === action.payload?.id
+            );
+            if (existingProduct) {
+                state.favorite = state.favorite.filter(
+                    (item) => item?.id !== action.payload.id
+                );
+            } else {
+                state.favorite.push(action.payload);
+            }
+        },
+
+        // Reset Favorite
+        resetFavorite: (state) => {
+            state.favorite = [];
+        },
+
     },
 })
 
-export const { addToCart, increaseQuantity, decreaseQuantity } = shofySlice.actions;
+export const { addToCart, increaseQuantity, decreaseQuantity, removeFromCart, resetCart, addToFavorite, resetFavorite } = shofySlice.actions;
 export default shofySlice.reducer;
