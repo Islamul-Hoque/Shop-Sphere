@@ -1,11 +1,14 @@
-import React from 'react';
 
-const page = () => {
+import Container from "@/components/Container";
+import CartProducts from "@/components/cart/CartProducts"
+import React from "react";
+
+const CartPage = () => {
     return (
-        <div>
-            cart
-        </div>
+        <Container className="py-10">
+            <CartProducts />
+        </Container>
     );
 };
 
-export default page;
+export default CartPage;
